@@ -43,7 +43,7 @@ class PageController extends Controller
 
     public function cards()
     {
-        return view('Bootstrap.ui-cards');
+        return view('Bootstrap.ui-card');
     }
 
     public function forms()
