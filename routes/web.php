@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\ApplicationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +17,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 // BERANDA
-Route::get('/', [PageController::class, 'index'])->name('index');
+Route::prefix('/admin')->namespace('app\Http\Controllers\Admin')->group(function(){
+    Route::match(['get', 'post'], 'login', [AdminController::class, 'login']);
+    Route::group(['middleware'=>['admin']], function(){
+        Route::get('dashboard', [AdminController::class, 'dashboard']);
+        Route::get('/application', [AdminController::class, 'application'])->name('ApplicationTable');
 
-Route::get('/login', [PageController::class, 'login'])->name('login');
-Route::get('/register', [PageController::class, 'register'])->name('register');
-Route::get('/icon', [PageController::class, 'icon'])->name('icon');
-Route::get('/sample-page', [PageController::class, 'sample'])->name('sample');
-Route::get('/ui-alerts', [PageController::class, 'alerts'])->name('alerts');
-Route::get('/ui-buttons', [PageController::class, 'buttons'])->name('buttons');
-Route::get('/ui-cards', [PageController::class, 'cards'])->name('cards');
-Route::get('/ui-forms', [PageController::class, 'forms'])->name('forms');
-Route::get('/ui-typography', [PageController::class, 'typography'])->name('typography');
+        // application
+        Route::get('application-create', [ApplicationController::class, 'create'])->name('createApplication');
+        Route::post('application-store', [ApplicationController::class, 'store'])->name('storeApplication');
+
+        Route::delete('/application-{id}', [ApplicationController::class, 'destroy'])->name('destroyApplication');
+
+        Route::get('application-{id}', [ApplicationController::class, 'edit'])->name('editApplication');
+        Route::put('application-{id}', [ApplicationController::class, 'update'])->name('updateApplication');
+    });
+});
