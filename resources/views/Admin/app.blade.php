@@ -237,37 +237,55 @@
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ url('admin/dashboard') }}"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ url('admin/dashboard') }}"
+                                aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                                    class="hide-menu">Data User</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ url('admin/dashboard') }}"
+                                aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                                    class="hide-menu">Data Sample</span></a></li>
+
                         <li class="list-divider"></li>
-                        <li class="nav-small-cap"><span class="hide-menu">Components</span></li>
+                        <li class="nav-small-cap"><span class="hide-menu">Applications</span></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                                aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
-                                    class="hide-menu">Drafts </span></a>
+                            aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                                class="hide-menu">Application </span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
                                 <li class="sidebar-item"><a href="{{ route('ApplicationTable') }}" class="sidebar-link"><span
-                                            class="hide-menu"> All Draft
+                                        class="hide-menu"> Draft Applications
+                                    </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="{{ route('ApplicationTable') }}" class="sidebar-link"><span
+                                        class="hide-menu"> All Applications
+                                    </span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                                aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                                    class="hide-menu">Invoice </span></a>
+                            <ul aria-expanded="false" class="collapse first-level base-level-line">
+                                <li class="sidebar-item"><a href="{{ route('ApplicationTable') }}" class="sidebar-link"><span
+                                            class="hide-menu"> Quotation
                                         </span></a>
                                 </li>
                                 <li class="sidebar-item"><a href="{{ route('ApplicationTable') }}" class="sidebar-link"><span
-                                            class="hide-menu"> Pending Drafts
+                                            class="hide-menu"> Invoice Lab
+                                        </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="{{ route('ApplicationTable') }}" class="sidebar-link"><span
+                                            class="hide-menu"> Cerraproval
+                                        </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="{{ route('ApplicationTable') }}" class="sidebar-link"><span
+                                            class="hide-menu"> SP2 SDPPI
                                         </span></a>
                                 </li>
                             </ul>
                         </li>
-
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                            aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
-                                class="hide-menu">Application </span></a>
-                        <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                            <li class="sidebar-item"><a href="{{ route('ApplicationTable') }}" class="sidebar-link"><span
-                                        class="hide-menu"> All Application
-                                    </span></a>
-                            </li>
-                            <li class="sidebar-item"><a href="{{ route('ApplicationTable') }}" class="sidebar-link"><span
-                                        class="hide-menu"> Pending Application
-                                    </span></a>
-                            </li>
-                        </ul>
-                    </li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ url('admin/dashboard') }}"
+                                aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                                    class="hide-menu">Certificates</span></a></li>
+                        <li class="list-divider"></li>
                         
                         <li class="nav-small-cap mt-3"><span class="hide-menu">Other</span></li>
                         

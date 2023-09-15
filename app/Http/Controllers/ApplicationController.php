@@ -16,23 +16,21 @@ class ApplicationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'localrepName' => 'required',
             'name' => 'required',
             'brand' => 'required',
+            'modeltype' => 'required',
+            'pemasaran' => 'required',
+            'pembuat' => 'required',
+            'alamat' => 'required',
+            'localrepName' => 'required',
+            'localrepAlamat' => 'required',
         ]);
    
         $input = $request->all();
-   
-        // if ($image = $request->file('image')) {
-        //     $destinationPath = 'images/';
-        //     $artikelimage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-        //     $image->move($destinationPath, $artikelimage);
-        //     $input['image'] = "$artikelimage";
-        // }
      
         Application::create($input);
       
-        return redirect()->route('applicationTable')
+        return redirect()->route('ApplicationTable')
             ->with('success','Application added successfully.');
     }
 
@@ -47,34 +45,28 @@ class ApplicationController extends Controller
         $application = Application::find($id);
 
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'isi' => 'required',
-            'tanggal' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name' => 'required',
+            'brand' => 'required',
+            'modeltype' => 'required',
+            'pemasaran' => 'required',
+            'pembuat' => 'required',
+            'alamat' => 'required',
+            'localrepName' => 'required',
+            'localrepAlamat' => 'required',
         ]);
 
         $input = request()->except(['_method', '_token']);
 
-        if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
-            $artikelimage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $artikelimage);
-            $input['image'] = "$artikelimage";
-        }else{
-            unset($input['image']);
-        }
-
         $application->update($input);
      
-        return redirect()->route('artikelTable')
-            ->with('success','Artikel Details Updated successfully');
+        return redirect()->route('ApplicationTable')
+            ->with('success','Application Details Updated Successfully.');
     }
 
     public function destroy($id) {
         $application = Application::find($id);
         $application->delete();
         return redirect('/admin/application')
-            ->with('success','Artikel Deleted successfully');
+            ->with('success','Application Deleted successfully');
     }
 }
