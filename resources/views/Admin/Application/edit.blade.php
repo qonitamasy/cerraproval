@@ -4,58 +4,82 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-12">
+                <h2 class="card-title mb-4">Edit Application Details</h2>
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title">Update Artikel Baru</h3>
-                        <form action="{{ route('updateApplication', $artikel->id) }}" method="POST" enctype="multipart/form-data" class="mt-3">
+                        <form action="{{ route('updateApplication', $application->id) }}" method="POST" enctype="multipart/form-data" class="mt-2">
                             @csrf
                             @method('PUT')
                             <div class="form-body">
-                                <label class="form-label">Title</label>
+                                <label class="form-label">Nama Perangkat</label>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control" name="title" value="{{ $artikel->title }}"
-                                                placeholder="Title">
+                                            <input type="text" class="form-control" name="name" value="{{ $application->name }}"
+                                                placeholder="Name">
                                         </div>
                                     </div>
                                 </div>
-                                <label class="form-label">Description</label>
+                                <label class="form-label">Brand / Merek</label>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group mb-3">
-                                            <textarea type="text" class="form-control" name="description"
-                                                placeholder="Description">{{ $artikel->description }}</textarea>
+                                            <input type="text" class="form-control" name="brand" value="{{ $application->brand }}"
+                                                placeholder="brand">
                                         </div>
                                     </div>
                                 </div>
-                                <label class="form-label">Isi</label>
+                                <label class="form-label">Model Type</label>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group mb-3">
-                                            <textarea type="text" class="form-control" name="isi"
-                                                placeholder="Isi">{{ $artikel->isi }}</textarea>
+                                            <input type="text" class="form-control" name="modeltype" value="{{ $application->modeltype }}"
+                                                placeholder="modeltype">
                                         </div>
                                     </div>
                                 </div>
-                                {{-- //USE THE DATE THING FOR FORMS --}}
-                                <label class="form-label">Tanggal</label>
+                                <label class="form-label">Pemasaran</label>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control" name="tanggal" value="{{ $artikel->tanggal }}"
-                                                placeholder="Tanggal">
+                                            <input type="text" class="form-control" name="pemasaran" value="{{ $application->pemasaran }}"
+                                                placeholder="Pemasaran">
                                         </div>
                                     </div>
                                 </div>
-                                {{-- //USE THE IMAGE THING FOR FORMS --}}
-                                <label class="form-label">Image</label>
+                                <label class="form-label">Pembuat</label>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group mb-3">
-                                            <input type="file" class="form-control" name="image" value="{{ $artikel->image }}"
-                                                placeholder="Image">
-                                            <img src="/images/{{ $artikel->image }}" width="300px">
+                                            <input type="text" class="form-control" name="pembuat" value="{{ $application->pembuat }}"
+                                                placeholder="Pembuat">
+                                        </div>
+                                    </div>
+                                </div>
+                                <label class="form-label">Alamat</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control" name="alamat" value="{{ $application->alamat }}"
+                                                placeholder="Alamat">
+                                        </div>
+                                    </div>
+                                </div>
+                                <label class="form-label">Local Rep Name</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control" name="localrepName" value="{{ $application->localrepName }}"
+                                                placeholder="Local Rep Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <label class="form-label">Local Rep Alamat</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control" name="localrepAlamat" value="{{ $application->localrepAlamat }}"
+                                                placeholder="Local Rep Alamat">
                                         </div>
                                     </div>
                                 </div>

@@ -53,6 +53,8 @@
                                         <th>Nama Pemohon</th>
                                         <th>Nama Perangkat</th>
                                         <th>Merek / Brand</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -64,6 +66,7 @@
                                         <td>{{ $item->localrepName }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->brand }}</td>
+                                        <td class="btn btn-primary" >{{ $item->status }}</td>
                                         <td>
                                             <form action="{{ route('destroyApplication',$item->id) }}" method="POST" style="display: flex; justify-content:center">
                                                 <a class="btn btn-primary" href="{{ route('editApplication', $item->id) }}">Edit</a>
@@ -82,6 +85,8 @@
                                         <th>Nama Pemohon</th>
                                         <th>Nama Perangkat</th>
                                         <th>Merek / Brand</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </tfoot>
                             </table>

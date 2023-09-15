@@ -14,6 +14,6 @@ class Application extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name', 'brand', 'modeltype', 'pemasaran', 'pembuat', 'alamat', 'localrepName', 'localrepAlamat'
+        'name', 'brand', 'modeltype', 'pemasaran', 'pembuat', 'alamat', 'localrepName', 'localrepAlamat', 'status'
     ];
 }
